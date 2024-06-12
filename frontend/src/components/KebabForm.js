@@ -1,6 +1,7 @@
 // src/components/KebabManager.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import "./KebabForm.css";
 
 const KebabManager = () => {
     const [kebabs, setKebabs] = useState([]);
@@ -84,11 +85,11 @@ const KebabManager = () => {
     };
 
     return (
-        <div>
+        <div className="center">
             {!selectedKebab && (
                 <div>
                     <h2>Add Kebab</h2>
-                    <form onSubmit={handleAddSubmit}>
+                    <form onSubmit={handleAddSubmit} className="form">
                         <input
                             type="text"
                             placeholder="Name"
@@ -110,7 +111,7 @@ const KebabManager = () => {
                             onChange={(e) => setPrice(e.target.value)}
                             required
                         />
-                        <button type="submit">Add</button>
+                        <button type="submit" className="button add-button">Add</button>
                     </form>
                 </div>
             )}
@@ -118,7 +119,7 @@ const KebabManager = () => {
             {selectedKebab && (
                 <div>
                     <h2>Edit Kebab</h2>
-                    <form onSubmit={handleEditSubmit}>
+                    <form onSubmit={handleEditSubmit} className="form">
                         <input
                             type="text"
                             placeholder="Name"
@@ -140,8 +141,8 @@ const KebabManager = () => {
                             onChange={(e) => setPrice(e.target.value)}
                             required
                         />
-                        <button type="submit">Update</button>
-                        <button type="button" onClick={handleCancelEdit}>Cancel</button>
+                        <button type="submit" className="button update-button">Update</button>
+                        <button type="button" className="button cancel-button" onClick={handleCancelEdit}>Cancel</button>
                     </form>
                 </div>
             )}
@@ -149,10 +150,10 @@ const KebabManager = () => {
             <h2>Kebab List</h2>
             <ul>
                 {kebabs.map(kebab => (
-                    <li key={kebab.id}>
+                    <li key={kebab.id} className="list-item">
                         {kebab.name} - {kebab.ingredients} - {kebab.price}zł
-                        <button onClick={() => handleEdit(kebab)}>Edit</button>
-                        <button onClick={() => handleDelete(kebab.id)}>Delete</button>
+                        <button onClick={() => handleEdit(kebab)} className="button edit-button">Edit</button>
+                        <button onClick={() => handleDelete(kebab.id)} className="button delete-button">Delete</button>
                     </li>
                 ))}
             </ul>

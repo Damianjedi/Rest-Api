@@ -1,0 +1,55 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button {
+    background-color: green;
+    color: white;
+}
+
+.update-button {
+    background-color: blue;
+    color: white;
+}
+
+.cancel-button {
+    background-color: red;
+    color: white;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+}
+
+.edit-button {
+    background-color: orange;
+    color: white;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 10px 0;
+}

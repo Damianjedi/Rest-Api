@@ -14,7 +14,7 @@ const App = () => {
     };
 
     return (
-        <div>
+        <div className="center">
             <h1>Kebab Shop</h1>
             <KebabForm selectedKebab={selectedKebab} onSave={handleSave} onEdit={handleEdit}/>
         </div>
